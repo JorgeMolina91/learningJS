@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulacion basica del DOM</title>
+</head>
+<body>
+    <h1>Calculando</h1>
+
+   <form id="form">
+    <input id="calculo1" placeholder="Primer Número" />
+    <input id="calculo2" placeholder="Segundo Número" />
+    <button type="button" id="btncalcular">Calcular</button>
+
+    <p id="result"></p>
+
+   </form>
+   <!--
+    En este caso los formularios toman el ultimo boton que encuentren, y lo interpretan como si fuera de tipo 'submit',
+    por eso siempre que le doy click a ese boton la pagina se recarga ... Por eso es que no se puede ver el resultado 
+    como se veia en el ejercicio anterior...
+    Lo que se debe hacer es darle un id al formulario, llamarlo en JS con el querySelector(#id), y cambiar el nombre del 
+    evento a 'submit'. Luego se pasa como parametro a la funcion que pasa como segundo argumento de la funcion
+    addEventListener, el parametro 'event', y dentro de la funcion se llama un metodo del 'event' que seria 
+    event.preventDefault(); Este preventDefault previene que se ejecute lo que por defecto viene en el submit,
+    entonces nos deja ver la informacion sin que se recargue la pagina como suele pasar cuando se hace submit
+
+    
+    Otra forma de resolver este ejercicio es cambiar el tipo del ultimo boton del formulario por type="button", con 
+    eso no sera un submit automatico, y mantendra el resultado en pantalla..
+   -->
+
+    <script src="./3 - addEventListeners.js"></script>
+</body>
+</html>

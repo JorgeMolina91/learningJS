@@ -1,0 +1,16 @@
+Usuario   PC
+
+Piedra - Piedra = Igual *
+Papel - Papel = Igual *
+Tijera - Tijera = Igual * 
+
+Piedra - papel = Gana PC - 0, 1
+Papel - Tijera = Gana PC - 1, 2
+Tijera - Piedra = Gana PC - 2, 0
+
+Papel - Piedra = Gana Usuario - 1, 0
+Piedra - Tijera = Gana Usuario - 0, 2
+Tijera - Papel = Gana Usuario - 2, 1
+   
+
+

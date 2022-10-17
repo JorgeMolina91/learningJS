@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulacion basica del DOM</title>
+</head>
+<body>
+    <h1>Calculando</h1>
+
+    <input id="calculo1" placeholder="Primer Número" />
+    <input id="calculo2" placeholder="Segundo Número" />
+    <button id="btncalcular" onclick="btnOnClick()">Calcular</button>
+    <!--
+        El evento 'onClick' se pone como un atributo del elemento HTML. Este sirve para ejecutar alguna funcion cuando 
+        se da click sobre el elemento al que se le pase.
+        Hay otros eventos como 'onChange', que mandan una alerta cuando se hace un cambio sobre el elemento al que se
+        le pasa el evento.
+
+        <input id="calculo2" placeholder="Segundo Número" onchange="console.log('Cambio algo')" />
+        <button id="btncalcular" onClick="console.log('Click del usuario')">Calcular</button>
+
+        La mejor forma de hacer esto mismo para evitar tanto codigo JS mezclado con HTML, es crear una funcion en JS
+        y lo que se le pasa como atributo al elemento HTML es la funcion de JS.
+    -->
+    <p id="result"></p>
+
+    <script src="./2 - script1.js"></script>
+</body>
+</html>

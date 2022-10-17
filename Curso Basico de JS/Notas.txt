@@ -1,0 +1,132 @@
+Orientado a Objetos: Se trata del paradigmas de programación... Que tiene clases, objetos con métodos y  atributos, etc.
+
+Débilmente tipado: Tiene que ver con que los datos pueden interactuar entre sí, aunque no sean el mismo tipo. Por ejemplo 
+
+		4 + "7"; // 47    |    4 * "7"; //28  |    2 + true; //3   |    false - 3; // -3  
+
+
+Dinámico: Porque corre 'saltándose' la parte de la compilación, es decir, se pueden ver en tiempo los cambios que vayamos haciendo.
+
+Los lenguajes estáticos tienen que ser compilados antes de ser 'traducidos' a bicode ó código binario y la compu los pueda entender.
+
+Lenguaje interpretado: Lee línea por línea lo que escribimos en el código, y si encuentra algún error, para todo y arroja un error.
+
+Forwards Significa que es compatible con versiones futuras, es decir, que si se agrega alguna adición o modificación al lenguaje, 
+igual va a poder seguir corriendo
+
+Backwards significa que NO es compatible con versiones futuras, es decir, que si se agrega alguna adición o modificación al lenguaje, 
+va a poder seguir corriendo, pero NO va a ser compatible con estás nuevas características. 
+								                                            
+JS es un lenguaje Backwards
+
+Por esta razón, JS  usa un compilador llamado BABEL, con el que es posible usar las nuevas funciones que tenga alguna nueva versión de 
+JS y hacer que todo siga funcionando sin líos...
+
+Hay 2 componentes principales:
+- Data que guardamos en memoria
+- Tareas (funciones) que hacemos con esa data
+
+Las variables son espacio reservado en memoria para guardar algún dato 
+Cuando se crean variables, hay 2 estados de las variables:
+
+- Declarar Es cuando se reserva un espacio en memoria para asignar algún valor, pero el valor no se declara aún, es decir no se pone...
+- Inicializar Es cuando se asigna el valor que la variable va a contener
+
+Las funciones son sentencias que se declaran para realizar cierto tipo acciones o funciones, haciendo uso de variables que hayan sido 
+ya declaradas. 
+Hay 2 tipos de funciones: 
+- Declarativas Se crea usando la palabra reservada function y luego se pone el nombre que le queramos dar a la función, se ponen 
+paréntesis () y luego corchetes, y así se declara una función
+
+- Expresivas Se crea usando una variable var con el nombre de la función, luego se pone un igual =, y después se pone la palabra 
+reservada function, se ponen paréntesis () y luego corchetes y ya queda de expresión... También se conocen como funciones anónimas 
+porque se declaran en una variable, es decir, no tienen un nombre como tal.
+
+Las funciones necesitan unos parámetros, que son valores que se ponen dentro de los paréntesis para poder trabajar con esos valores. 
+
+`` se hacen con ctrl + } 
+
+Cuando creo una función, y quiero pasar un parámetro muchas veces sin tener que estar llamando todo el tiempo a la función, lo hago con 
+la siguiente sintaxis:
+
+function miFuncion(estudiante){
+	console.log(`Hola ${estudiante}`);
+}
+
+Esto es útil porque si declarara una variable con un nombre de estudiante var estudiante = "Jorge"; Tendría que declarar demasiadas variables 
+para que el nombre cambie... Con esta forma de llamar al parámetro, simplemente puedo llamar a la función y pasar el nombre que quiera por 
+parámetro...
+
+function miFuncion(estudiante){
+	console.log(`Hola ${estudiante}`);
+}
+miFuncion("Jorge");
+miFuncion("Luis");
+miFuncion("Adriana");
+miFuncion("De la Merced");
+
+La palabra reservada return se usa para devolver algún resultado o información que se requiera... 
+
+function suma(a, b){
+	var resultado = a + b;
+	return resultado;
+}
+suma (85, 5) //90
+
+Ó
+
+function suma(a, b){
+	return a + b;
+}
+suma (85, 5) //90
+
+Scope Es el alcance que tienes las variables, es decir, depende de donde se declare un variable, se tiene acceso a ella o no...
+Scope Global Existen todas las variables y se puede tener acceso a ellas desde cualquier lugar (funciones, clases, etc.) 
+Scope Local Existe solo en el entorno donde se crean, es decir, en la función donde se crea y no se tiene acceso a ella desde afuera 
+de la función
+
+Hoisting Es cuando las variables y las funciones se declaran antes que se procese el código. 
+Entonces si se declaran después, lo que hace JS es que les pone un valor de 'undefined', para guardar el espacio en memoria, pero una vez 
+recorrido el proceso se da cuenta que se declararon después y asigna el valor a la variable o a la función. 
+
+La mejor práctica es declarar e inicializar las variables y las funciones al inicio del código para evitar este hoisting aunque con el uso 
+de let y const creo que eso ya desaparece... Pero lo veré más adelante.
+
+Coerción Es cuando podemos cambiar un tipo de valor a otro... 
+
+Coerción implícita Cuando el lenguaje nos ayuda, y el mismo cambia el tipo de valor de uno a cualquier otro
+
+		4 + "7"; // 47  =>  Aquí el lenguaje asume que queremos usar un String y lo convierte a String implícitamente  
+		4 * "7"; //28  =>  Aquí el lenguaje asume que queremos usar un Number y lo convierte a Number implícitamente 
+
+Coerción explícita Cuando obligamos a que un valor de un tipo cambie a otro tipo de valor
+		var a = String(b)
+		var a = Number(b)
+
+En JS los decimales y los enteros funcionan como número, es decir, a diferencia de Python se puede hacer operaciones con ambos tipos de 
+datos sin ningún inconveniente. 
+
+Truthy y Falsy Son condiciones de verdades o falso que se usan para las condicionales.
+
+Operadores Funcionan igual que en la mayoría de lenguajes de programación. 
+= Asigna 
+== Iguala o Compara el valor de una variable, pero no su tipo de dato 3 == "3"; // true
+=== Iguala o Compara el valor de una variable y su tipo de dato 3 == "3"; // false | 3 === 3; // true
+!= Niega O Distingue
++ Suma o Concatena strings 
+- Resta
+* Multiplica 
+/ Divide 
+! Negación 
+> Mayor que 
+< Menor que 
+>= Mayor o Igual que 
+<= Menor o Igual que 
+&& 2 o más condiciones se tienen que cumplir para que sea true
+|| Si 1 u otra condición se cumple es true
+++ Aumenta en 1 el valor de algún número asignado. a = 40;  |  a++; // 41
++= Aumenta el valor de un número. a = 40;  |  a += 3; // 43
+
+Condicionales Son reglas que se aplican para validar si algo es verdadero o falso y generar ciertas acciones con eso.
+
+Operador ternario Es como generar un if y un else en una sola línea. condition ? true : false; 
